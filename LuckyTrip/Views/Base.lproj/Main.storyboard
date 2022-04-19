@@ -15,13 +15,87 @@
                     <view key="view" contentMode="scaleToFill" id="NZc-8s-plB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lH9-i0-FNK">
+                                <rect key="frame" x="173.5" y="437.5" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="btnDidTapped:" destination="E9P-aD-YlQ" eventType="touchUpInside" id="Gl1-JH-TtU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="afe-9H-bey"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lH9-i0-FNK" firstAttribute="centerX" secondItem="afe-9H-bey" secondAttribute="centerX" id="6EN-1p-zrn"/>
+                            <constraint firstItem="lH9-i0-FNK" firstAttribute="centerY" secondItem="afe-9H-bey" secondAttribute="centerY" id="Lkq-AH-UIY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="0dh-mS-omc" kind="show" identifier="mySegue" id="gP4-bx-2QE"/>
+                        <segue destination="KZh-cb-JVN" kind="show" id="2iG-UV-LE6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAT-wq-ZQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-529" y="-39"/>
+            <point key="canvasLocation" x="-757" y="-40"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Auo-uK-0v7">
+            <objects>
+                <viewController id="0dh-mS-omc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Npr-Ev-sUc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaJ-HE-6IU">
+                                <rect key="frame" x="151" y="426.5" width="112" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jpO-dS-KgU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KaJ-HE-6IU" firstAttribute="centerX" secondItem="jpO-dS-KgU" secondAttribute="centerX" id="Tlk-RY-qoN"/>
+                            <constraint firstItem="KaJ-HE-6IU" firstAttribute="centerY" secondItem="jpO-dS-KgU" secondAttribute="centerY" id="dGA-b4-A7d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aHA-FY-YLH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jd-og-5tt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="-233"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0Fw-bM-Xc3">
+            <objects>
+                <viewController id="KZh-cb-JVN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bv2-8Q-gFD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-dT-ieP">
+                                <rect key="frame" x="149.5" y="426.5" width="115.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Iq0-51-dRr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ih7-dT-ieP" firstAttribute="centerX" secondItem="Iq0-51-dRr" secondAttribute="centerX" id="Pw4-On-FPQ"/>
+                            <constraint firstItem="Ih7-dT-ieP" firstAttribute="centerY" secondItem="Iq0-51-dRr" secondAttribute="centerY" id="jVr-x9-90a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b6V-Rc-vXT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TAV-6a-KrW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="539"/>
         </scene>
     </scenes>
     <resources>
