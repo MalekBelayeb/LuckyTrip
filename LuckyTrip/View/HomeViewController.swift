@@ -35,7 +35,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        
     }
     
     

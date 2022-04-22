@@ -11,6 +11,7 @@
 		4A0330082810B77600AEE9BD /* InterestPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0330062810B77600AEE9BD /* InterestPlaceTableViewCell.xib */; };
 		4A03300B2810C67500AEE9BD /* InterestPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A03300A2810C67500AEE9BD /* InterestPlace.swift */; };
 		4A03300D2810CA1600AEE9BD /* InterestPlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A03300C2810CA1500AEE9BD /* InterestPlaceDetailViewController.swift */; };
+		4A4DB2362811F28B0002FFAE /* InterestPlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DB2352811F28B0002FFAE /* InterestPlacePresenter.swift */; };
 		4A89F3D12808CF9900860ABB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89F3D02808CF9900860ABB /* HomeViewController.swift */; };
 		4AE139A328075A4E00552D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE139A228075A4E00552D0A /* AppDelegate.swift */; };
 		4AE139A528075A4E00552D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE139A428075A4E00552D0A /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 		4A0330062810B77600AEE9BD /* InterestPlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestPlaceTableViewCell.xib; sourceTree = "<group>"; };
 		4A03300A2810C67500AEE9BD /* InterestPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlace.swift; sourceTree = "<group>"; usesTabs = 0; };
 		4A03300C2810CA1500AEE9BD /* InterestPlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlaceDetailViewController.swift; sourceTree = "<group>"; };
+		4A4DB2352811F28B0002FFAE /* InterestPlacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlacePresenter.swift; sourceTree = "<group>"; };
 		4A89F3D02808CF9900860ABB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4AE1399F28075A4E00552D0A /* LuckyTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE139A228075A4E00552D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		4A6149DE280F681A0026EA5C /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4A4DB2352811F28B0002FFAE /* InterestPlacePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				4A89F3D12808CF9900860ABB /* HomeViewController.swift in Sources */,
 				4AE139AD28075A4E00552D0A /* LuckyTrip.xcdatamodeld in Sources */,
+				4A4DB2362811F28B0002FFAE /* InterestPlacePresenter.swift in Sources */,
 				4A03300D2810CA1600AEE9BD /* InterestPlaceDetailViewController.swift in Sources */,
 				4AE139A328075A4E00552D0A /* AppDelegate.swift in Sources */,
 				4A03300B2810C67500AEE9BD /* InterestPlace.swift in Sources */,
