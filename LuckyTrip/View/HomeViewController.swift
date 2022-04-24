@@ -8,7 +8,7 @@
 import UIKit
 import TagListView
 
-class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,PlaceOfInterestViewNotifier,TagListViewDelegate {
+class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,PlaceOfInterestViewNotifier,TagListViewDelegate {
     
     func showLoadingView() {
         
@@ -31,7 +31,17 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         LoadingView.shared.hideLoading()
     }
         
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collectionItems.count
+    }
      
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "POICollectionViewCell", for: indexPath)
+        
+        return cell
+    }
+    
     var interstPlaces:[InterestPlace] = []
     var numItems : Int = 0
     let cities = ["Tunis","Sousse","Ariana","Bizerte","Sfax","Manouba"]
@@ -40,6 +50,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     let presenter:PlaceOfInterestPresenter = PlaceOfInterestPresenter(placeOfInterestService: PlaceOfinterestService())
     let cityButton = UIButton(configuration: .borderedProminent())
 
+    let collectionItems = ["","","",""]
     @IBOutlet weak var tagListView: TagListView!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -111,13 +122,21 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = "Lucky Trip"
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tagListView.delegate = self
         
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
         self.presenter.placeOfInterestViewNotifier = self
         
         self.tableView.register(UINib.init(nibName: "InterestPlaceTableViewCell", bundle: nil), forCellReuseIdentifier: "InterestPlaceTableViewCell")
+        self.collectionView.register(UINib.init(nibName: "POICollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "POICollectionViewCell")
+
         
         self.createCityMenu(){
             item in

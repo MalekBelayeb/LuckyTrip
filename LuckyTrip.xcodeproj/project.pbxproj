@@ -13,6 +13,11 @@
 		075497B52814BD9E00E0D13A /* InterestPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075497B42814BD9E00E0D13A /* InterestPlaceDetail.swift */; };
 		075497B72814D18700E0D13A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075497B62814D18700E0D13A /* Extensions.swift */; };
 		0785532028140AFE0044CCE2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785531F28140AFE0044CCE2 /* Const.swift */; };
+		07D72EEF28157E4E00655381 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D72EEE28157E4E00655381 /* Region.swift */; };
+		07D72EF12816042E00655381 /* WikipediaWKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D72EF02816042E00655381 /* WikipediaWKViewController.swift */; };
+		07D72EF42816094900655381 /* POICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D72EF22816094900655381 /* POICollectionViewCell.swift */; };
+		07D72EF52816094900655381 /* POICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D72EF32816094900655381 /* POICollectionViewCell.xib */; };
+		07D72EF828160B1000655381 /* ViewDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D72EF728160B1000655381 /* ViewDesignable.swift */; };
 		490F4B644051FABEC0BEDF9E /* Pods_LuckyTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4838F35770A10889DFC5565 /* Pods_LuckyTrip.framework */; };
 		4A0330072810B77600AEE9BD /* InterestPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0330052810B77600AEE9BD /* InterestPlaceTableViewCell.swift */; };
 		4A0330082810B77600AEE9BD /* InterestPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0330062810B77600AEE9BD /* InterestPlaceTableViewCell.xib */; };
@@ -35,6 +40,11 @@
 		075497B42814BD9E00E0D13A /* InterestPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlaceDetail.swift; sourceTree = "<group>"; };
 		075497B62814D18700E0D13A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0785531F28140AFE0044CCE2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		07D72EEE28157E4E00655381 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		07D72EF02816042E00655381 /* WikipediaWKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaWKViewController.swift; sourceTree = "<group>"; };
+		07D72EF22816094900655381 /* POICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POICollectionViewCell.swift; sourceTree = "<group>"; };
+		07D72EF32816094900655381 /* POICollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = POICollectionViewCell.xib; sourceTree = "<group>"; };
+		07D72EF728160B1000655381 /* ViewDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesignable.swift; sourceTree = "<group>"; };
 		491B1E701FBEC3659151F699 /* Pods-LuckyTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyTrip.release.xcconfig"; path = "Target Support Files/Pods-LuckyTrip/Pods-LuckyTrip.release.xcconfig"; sourceTree = "<group>"; };
 		4A0330052810B77600AEE9BD /* InterestPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlaceTableViewCell.swift; sourceTree = "<group>"; };
 		4A0330062810B77600AEE9BD /* InterestPlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestPlaceTableViewCell.xib; sourceTree = "<group>"; };
@@ -77,6 +87,7 @@
 		07343A7B2814895B00ECEA67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				07D72EF628160AEF00655381 /* Designs */,
 				07343A7C28148B4C00ECEA67 /* LoadingView.swift */,
 				075497B62814D18700E0D13A /* Extensions.swift */,
 			);
@@ -115,6 +126,14 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		07D72EF628160AEF00655381 /* Designs */ = {
+			isa = PBXGroup;
+			children = (
+				07D72EF728160B1000655381 /* ViewDesignable.swift */,
+			);
+			path = Designs;
+			sourceTree = "<group>";
+		};
 		4430EA4295615BAD3C274E95 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +148,8 @@
 			children = (
 				4A0330052810B77600AEE9BD /* InterestPlaceTableViewCell.swift */,
 				4A0330062810B77600AEE9BD /* InterestPlaceTableViewCell.xib */,
+				07D72EF22816094900655381 /* POICollectionViewCell.swift */,
+				07D72EF32816094900655381 /* POICollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -138,6 +159,7 @@
 			children = (
 				4A03300A2810C67500AEE9BD /* InterestPlace.swift */,
 				075497B42814BD9E00E0D13A /* InterestPlaceDetail.swift */,
+				07D72EEE28157E4E00655381 /* Region.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +172,7 @@
 				4AE139A828075A4E00552D0A /* Main.storyboard */,
 				4A89F3D02808CF9900860ABB /* HomeViewController.swift */,
 				4A03300C2810CA1500AEE9BD /* InterestPlaceDetailViewController.swift */,
+				07D72EF02816042E00655381 /* WikipediaWKViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +285,7 @@
 				4AE139B228075A5100552D0A /* LaunchScreen.storyboard in Resources */,
 				4A0330082810B77600AEE9BD /* InterestPlaceTableViewCell.xib in Resources */,
 				4AE139AF28075A5100552D0A /* Assets.xcassets in Resources */,
+				07D72EF52816094900655381 /* POICollectionViewCell.xib in Resources */,
 				4AE139AA28075A4E00552D0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,8 +341,11 @@
 			files = (
 				4A89F3D12808CF9900860ABB /* HomeViewController.swift in Sources */,
 				4AE139AD28075A4E00552D0A /* LuckyTrip.xcdatamodeld in Sources */,
+				07D72EF12816042E00655381 /* WikipediaWKViewController.swift in Sources */,
 				4A4DB2362811F28B0002FFAE /* InterestPlacePresenter.swift in Sources */,
+				07D72EEF28157E4E00655381 /* Region.swift in Sources */,
 				07343A7D28148B4C00ECEA67 /* LoadingView.swift in Sources */,
+				07D72EF42816094900655381 /* POICollectionViewCell.swift in Sources */,
 				4A03300D2810CA1600AEE9BD /* InterestPlaceDetailViewController.swift in Sources */,
 				4AE139A328075A4E00552D0A /* AppDelegate.swift in Sources */,
 				4A03300B2810C67500AEE9BD /* InterestPlace.swift in Sources */,
@@ -326,6 +353,7 @@
 				4AE139A528075A4E00552D0A /* SceneDelegate.swift in Sources */,
 				075497B52814BD9E00E0D13A /* InterestPlaceDetail.swift in Sources */,
 				4A0330072810B77600AEE9BD /* InterestPlaceTableViewCell.swift in Sources */,
+				07D72EF828160B1000655381 /* ViewDesignable.swift in Sources */,
 				07343A7A281422DA00ECEA67 /* PlaceOfInterestService.swift in Sources */,
 				0785532028140AFE0044CCE2 /* Const.swift in Sources */,
 				075497B72814D18700E0D13A /* Extensions.swift in Sources */,
@@ -484,6 +512,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,6 +542,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

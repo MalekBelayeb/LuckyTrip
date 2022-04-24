@@ -44,12 +44,21 @@ class PlaceOfInterestPresenter
             {
 
                 
+                /*let mylist:[InterestPlace] = list.map{
+                    
+                    $0.dist = Double(String(format: "%.2f",$0.dist ?? 0))
+                    $0.kinds = ($0.kinds ?? "").split(separator: ",").prefix(3).joined(separator: ",")
+                    var interestPlace = InterestPlace()
+                    
+                    return interestPlace
+                }*/
+                
                 list.map{
                     
                     $0.dist = Double(String(format: "%.2f",$0.dist ?? 0))
                     $0.kinds = ($0.kinds ?? "").split(separator: ",").prefix(3).joined(separator: ",")
-                }
                 
+                }
                 
                 DispatchQueue.main.async {
                     self.placeOfInterestViewNotifier.showAllPlaceOfInterest(interstPlaces: list)
