@@ -44,28 +44,69 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RD9-63-gs1" customClass="TagListView" customModule="TagListView">
+                                <rect key="frame" x="16" y="160" width="382" height="43"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" systemColor="systemGrayColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemGrayColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginX">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBorderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="afe-9H-bey"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DU9-zl-Gfc" firstAttribute="leading" secondItem="afe-9H-bey" secondAttribute="leading" constant="16" id="7cv-ds-MOr"/>
                             <constraint firstItem="S58-gn-GJ0" firstAttribute="height" secondItem="NZc-8s-plB" secondAttribute="height" multiplier="0.667411" id="8P6-m9-pbs"/>
+                            <constraint firstItem="RD9-63-gs1" firstAttribute="top" secondItem="DU9-zl-Gfc" secondAttribute="bottom" constant="16" id="EnL-It-fdq"/>
+                            <constraint firstItem="RD9-63-gs1" firstAttribute="height" secondItem="NZc-8s-plB" secondAttribute="height" multiplier="0.0479911" id="Pab-Lu-iSs"/>
                             <constraint firstItem="S58-gn-GJ0" firstAttribute="leading" secondItem="afe-9H-bey" secondAttribute="leading" id="Rt7-lD-1KL"/>
                             <constraint firstItem="S58-gn-GJ0" firstAttribute="bottom" secondItem="afe-9H-bey" secondAttribute="bottom" id="ZuB-db-0JW"/>
                             <constraint firstItem="afe-9H-bey" firstAttribute="trailing" secondItem="DU9-zl-Gfc" secondAttribute="trailing" constant="16" id="lNW-2q-SY5"/>
                             <constraint firstItem="DU9-zl-Gfc" firstAttribute="top" secondItem="afe-9H-bey" secondAttribute="top" id="mFu-b1-r5F"/>
                             <constraint firstItem="S58-gn-GJ0" firstAttribute="trailing" secondItem="afe-9H-bey" secondAttribute="trailing" id="oCK-zC-noG"/>
+                            <constraint firstItem="RD9-63-gs1" firstAttribute="leading" secondItem="afe-9H-bey" secondAttribute="leading" constant="16" id="pfm-ym-tuO"/>
+                            <constraint firstItem="afe-9H-bey" firstAttribute="trailing" secondItem="RD9-63-gs1" secondAttribute="trailing" constant="16" id="qyX-kn-z9p"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="DU9-zl-Gfc" id="qNt-Wc-oim"/>
                         <outlet property="tableView" destination="S58-gn-GJ0" id="EzL-kh-26b"/>
+                        <outlet property="tagListView" destination="RD9-63-gs1" id="vAk-P9-mwo"/>
                         <segue destination="XpL-q6-ec2" kind="show" identifier="moveToDetail" id="8i3-Dr-ZY9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAT-wq-ZQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1197" y="-177"/>
+            <point key="canvasLocation" x="-1197.1014492753625" y="-177.45535714285714"/>
         </scene>
         <!--Interest Place Detail View Controller-->
         <scene sceneID="51e-Wm-D0b">
@@ -160,6 +201,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

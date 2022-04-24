@@ -8,7 +8,7 @@
 import UIKit
 import TagListView
 
-class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,PlaceOfInterestViewNotifier {
+class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,PlaceOfInterestViewNotifier,TagListViewDelegate {
     
     func showLoadingView() {
         
@@ -39,7 +39,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     let presenter:PlaceOfInterestPresenter = PlaceOfInterestPresenter(placeOfInterestService: PlaceOfinterestService())
     let cityButton = UIButton(configuration: .borderedProminent())
-    var taglListView:TagListView = TagListView()
+
+    @IBOutlet weak var tagListView: TagListView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -89,13 +90,30 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var tableView: UITableView!
 
+
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        
+        tagView.tag += 1
+        
+        if tagView.tag % 2 == 0
+        {
+            tagView.textColor = .gray
+            tagView.borderColor = .gray
+        
+        }else{
+            tagView.textColor = .black
+            tagView.borderColor = .black
+        }
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
+        self.tagListView.delegate = self
         
         self.presenter.placeOfInterestViewNotifier = self
         
@@ -108,10 +126,12 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         
         }
         
-        //self.createTagListView()
         
         self.presenter.performGetListPresenter()
     
+        tagListView.addTags(["Add", "two", "tags tags "])
+        
+
     }
     
     func createCityMenu(didSelect: @escaping (_ city:String) -> Void = {city in } )
@@ -145,33 +165,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
    
-    
-    func createTagListView()
-    {
-            
-        self.taglListView = TagListView()
-
-        taglListView.backgroundColor = .brown
-        
-        self.categories.forEach{
-            item in
-            
-        }
-        
-        let tag = TagView(title: "dfqfs")
-        
-        taglListView.addTagView(tag)
-        
-        self.view.addSubview(taglListView)
-        
-        taglListView.translatesAutoresizingMaskIntoConstraints = false
-        
-        taglListView.topAnchor.constraint(equalTo: self.collectionView.bottomAnchor, constant: 16).isActive = true
-        taglListView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        self.view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: taglListView.trailingAnchor, constant: 16).isActive = true
-        
-        
-    }
     
     // MARK: - Navigation
     
