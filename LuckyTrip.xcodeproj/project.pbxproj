@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07343A7A281422DA00ECEA67 /* PlaceOfInterestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07343A79281422DA00ECEA67 /* PlaceOfInterestService.swift */; };
+		07343A7D28148B4C00ECEA67 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07343A7C28148B4C00ECEA67 /* LoadingView.swift */; };
+		075497B32814BA6A00E0D13A /* InterestPlaceDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075497B22814BA6A00E0D13A /* InterestPlaceDetailPresenter.swift */; };
+		075497B52814BD9E00E0D13A /* InterestPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075497B42814BD9E00E0D13A /* InterestPlaceDetail.swift */; };
+		075497B72814D18700E0D13A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075497B62814D18700E0D13A /* Extensions.swift */; };
+		0785532028140AFE0044CCE2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785531F28140AFE0044CCE2 /* Const.swift */; };
+		490F4B644051FABEC0BEDF9E /* Pods_LuckyTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4838F35770A10889DFC5565 /* Pods_LuckyTrip.framework */; };
 		4A0330072810B77600AEE9BD /* InterestPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0330052810B77600AEE9BD /* InterestPlaceTableViewCell.swift */; };
 		4A0330082810B77600AEE9BD /* InterestPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0330062810B77600AEE9BD /* InterestPlaceTableViewCell.xib */; };
 		4A03300B2810C67500AEE9BD /* InterestPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A03300A2810C67500AEE9BD /* InterestPlace.swift */; };
@@ -22,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07343A79281422DA00ECEA67 /* PlaceOfInterestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOfInterestService.swift; sourceTree = "<group>"; };
+		07343A7C28148B4C00ECEA67 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		075497B22814BA6A00E0D13A /* InterestPlaceDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlaceDetailPresenter.swift; sourceTree = "<group>"; };
+		075497B42814BD9E00E0D13A /* InterestPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlaceDetail.swift; sourceTree = "<group>"; };
+		075497B62814D18700E0D13A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0785531F28140AFE0044CCE2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		491B1E701FBEC3659151F699 /* Pods-LuckyTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyTrip.release.xcconfig"; path = "Target Support Files/Pods-LuckyTrip/Pods-LuckyTrip.release.xcconfig"; sourceTree = "<group>"; };
 		4A0330052810B77600AEE9BD /* InterestPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlaceTableViewCell.swift; sourceTree = "<group>"; };
 		4A0330062810B77600AEE9BD /* InterestPlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestPlaceTableViewCell.xib; sourceTree = "<group>"; };
 		4A03300A2810C67500AEE9BD /* InterestPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlace.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -36,6 +50,8 @@
 		4AE139AE28075A5100552D0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AE139B128075A5100552D0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AE139B328075A5100552D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DF4EF6E0FCA0FC60AC78A6D /* Pods-LuckyTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuckyTrip.debug.xcconfig"; path = "Target Support Files/Pods-LuckyTrip/Pods-LuckyTrip.debug.xcconfig"; sourceTree = "<group>"; };
+		C4838F35770A10889DFC5565 /* Pods_LuckyTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuckyTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +59,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490F4B644051FABEC0BEDF9E /* Pods_LuckyTrip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06EF746DC88D17D152AB9AE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4838F35770A10889DFC5565 /* Pods_LuckyTrip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07343A7B2814895B00ECEA67 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				07343A7C28148B4C00ECEA67 /* LoadingView.swift */,
+				075497B62814D18700E0D13A /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0785531E28140AE90044CCE2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0785531F28140AFE0044CCE2 /* Const.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0785532128140E3C0044CCE2 /* DataPersistence  */ = {
+			isa = PBXGroup;
+			children = (
+				0785532328140E8C0044CCE2 /* Local */,
+				0785532228140E7B0044CCE2 /* Remote */,
+			);
+			path = "DataPersistence ";
+			sourceTree = "<group>";
+		};
+		0785532228140E7B0044CCE2 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				07343A79281422DA00ECEA67 /* PlaceOfInterestService.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		0785532328140E8C0044CCE2 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4430EA4295615BAD3C274E95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DF4EF6E0FCA0FC60AC78A6D /* Pods-LuckyTrip.debug.xcconfig */,
+				491B1E701FBEC3659151F699 /* Pods-LuckyTrip.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4A0330042810B4E100AEE9BD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				4A03300A2810C67500AEE9BD /* InterestPlace.swift */,
+				075497B42814BD9E00E0D13A /* InterestPlaceDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -69,6 +145,7 @@
 		4A45204C2808A7D5006EB503 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				07343A7B2814895B00ECEA67 /* Utils */,
 				4A0330042810B4E100AEE9BD /* Cells */,
 				4AE139A828075A4E00552D0A /* Main.storyboard */,
 				4A89F3D02808CF9900860ABB /* HomeViewController.swift */,
@@ -81,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				4A4DB2352811F28B0002FFAE /* InterestPlacePresenter.swift */,
+				075497B22814BA6A00E0D13A /* InterestPlaceDetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -90,6 +168,8 @@
 			children = (
 				4AE139A128075A4E00552D0A /* LuckyTrip */,
 				4AE139A028075A4E00552D0A /* Products */,
+				4430EA4295615BAD3C274E95 /* Pods */,
+				06EF746DC88D17D152AB9AE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +184,8 @@
 		4AE139A128075A4E00552D0A /* LuckyTrip */ = {
 			isa = PBXGroup;
 			children = (
+				0785532128140E3C0044CCE2 /* DataPersistence  */,
+				0785531E28140AE90044CCE2 /* Utils */,
 				4AE139A228075A4E00552D0A /* AppDelegate.swift */,
 				4AE139A428075A4E00552D0A /* SceneDelegate.swift */,
 				4A0330092810C66100AEE9BD /* Model */,
@@ -124,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AE139B628075A5100552D0A /* Build configuration list for PBXNativeTarget "LuckyTrip" */;
 			buildPhases = (
+				C6C6C2BE85F68D5C16F02AC6 /* [CP] Check Pods Manifest.lock */,
 				4AE1399B28075A4E00552D0A /* Sources */,
 				4AE1399C28075A4E00552D0A /* Frameworks */,
 				4AE1399D28075A4E00552D0A /* Resources */,
+				97C02E5CBA2434DD5653F4E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +268,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		97C02E5CBA2434DD5653F4E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LuckyTrip/Pods-LuckyTrip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LuckyTrip/Pods-LuckyTrip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LuckyTrip/Pods-LuckyTrip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6C6C2BE85F68D5C16F02AC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LuckyTrip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4AE1399B28075A4E00552D0A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -192,11 +318,17 @@
 				4A89F3D12808CF9900860ABB /* HomeViewController.swift in Sources */,
 				4AE139AD28075A4E00552D0A /* LuckyTrip.xcdatamodeld in Sources */,
 				4A4DB2362811F28B0002FFAE /* InterestPlacePresenter.swift in Sources */,
+				07343A7D28148B4C00ECEA67 /* LoadingView.swift in Sources */,
 				4A03300D2810CA1600AEE9BD /* InterestPlaceDetailViewController.swift in Sources */,
 				4AE139A328075A4E00552D0A /* AppDelegate.swift in Sources */,
 				4A03300B2810C67500AEE9BD /* InterestPlace.swift in Sources */,
+				075497B32814BA6A00E0D13A /* InterestPlaceDetailPresenter.swift in Sources */,
 				4AE139A528075A4E00552D0A /* SceneDelegate.swift in Sources */,
+				075497B52814BD9E00E0D13A /* InterestPlaceDetail.swift in Sources */,
 				4A0330072810B77600AEE9BD /* InterestPlaceTableViewCell.swift in Sources */,
+				07343A7A281422DA00ECEA67 /* PlaceOfInterestService.swift in Sources */,
+				0785532028140AFE0044CCE2 /* Const.swift in Sources */,
+				075497B72814D18700E0D13A /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +472,7 @@
 		};
 		4AE139B728075A5100552D0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF4EF6E0FCA0FC60AC78A6D /* Pods-LuckyTrip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -368,6 +501,7 @@
 		};
 		4AE139B828075A5100552D0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 491B1E701FBEC3659151F699 /* Pods-LuckyTrip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
