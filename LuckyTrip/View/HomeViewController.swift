@@ -7,9 +7,47 @@
 
 import UIKit
 import TagListView
+import MapKit
+
+
+extension HomeViewController:CLLocationManagerDelegate
+{
+    
+    func getUserLocation()
+    {
+        
+        let status = CLLocationManager.authorizationStatus()
+        
+        if status == .notDetermined  || status == .restricted
+        {
+            
+            locationManager.requestWhenInUseAuthorization()
+                
+        }else {
+                
+            if let location = locationManager.location?.coordinate {
+                       
+                self.presenter.performGetListPresenter(radius: 30000, lon: Double(location.longitude), lat: Double(location.latitude),kinds:self.selectedCategories)
+                
+            }
+            
+        }
+        
+        
+    }
+    
+}
+
 
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,PlaceOfInterestViewNotifier,TagListViewDelegate {
     
+    
+    @IBOutlet weak var tagListViewWidth: NSLayoutConstraint!
+    
+    var locationManager = CLLocationManager()
+
+    @IBOutlet weak var scrollView: UIScrollView!
+
     func showLoadingView() {
         
         
@@ -44,16 +82,20 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     var interstPlaces:[InterestPlace] = []
     var numItems : Int = 0
+    
     let cities = ["Tunis","Sousse","Ariana","Bizerte","Sfax","Manouba"]
-    let categories = ["Tunis","Sousse","Ariana","Bizerte","Sfax","Manouba"]
+    
+    let categories = ["historic","cultural","museums","religion","mosques","churches","architecture","cemeteries","Ariana","Bizerte","Sfax","Manouba"]
 
+    var selectedCategories:[String] = []
+    
     let presenter:PlaceOfInterestPresenter = PlaceOfInterestPresenter(placeOfInterestService: PlaceOfinterestService())
-    let cityButton = UIButton(configuration: .borderedProminent())
+    let cityButton = UIButton(configuration: .borderedTinted())
 
     let collectionItems = ["","","",""]
     @IBOutlet weak var tagListView: TagListView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    //@IBOutlet weak var collectionView: UICollectionView!
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,56 +143,92 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var tableView: UITableView!
 
-
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         
         tagView.tag += 1
         
         if tagView.tag % 2 == 0
         {
+            
             tagView.textColor = .gray
             tagView.borderColor = .gray
-        
+            
+            if let selectedIndex = self.selectedCategories.firstIndex{ item in item == title }
+            {
+                self.selectedCategories.remove(at: selectedIndex)
+            }
+            
         }else{
             tagView.textColor = .black
             tagView.borderColor = .black
+            self.selectedCategories.append(title)
         }
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        self.tabBarController?.tabBar.isHidden = false
         
     }
     
+    @IBAction func useMyLocationDidTapped(_ sender: Any) {
+        
+        self.getUserLocation()
+        
+    }
     
+    override func viewDidLayoutSubviews() {
+        
+        let width = tagListView.tagViews.map { $0.frame.width }.reduce(0, +)
+        
+        tagListViewWidth.constant = width + CGFloat(10 * tagListView.tagViews.count)
+        view.layoutIfNeeded()
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+    
         self.navigationItem.title = "Lucky Trip"
+
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tagListView.delegate = self
-        
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
-        
+        self.tagListView.addTags(self.categories)
+        //self.collectionView.dataSource = self
+        //self.collectionView.delegate = self
+        self.locationManager.delegate = self
+        locationManager.startUpdatingLocation()
         self.presenter.placeOfInterestViewNotifier = self
         
         self.tableView.register(UINib.init(nibName: "InterestPlaceTableViewCell", bundle: nil), forCellReuseIdentifier: "InterestPlaceTableViewCell")
-        self.collectionView.register(UINib.init(nibName: "POICollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "POICollectionViewCell")
+        
+        //self.collectionView.register(UINib.init(nibName: "POICollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "POICollectionViewCell")
 
+        let settingsBtn = UIBarButtonItem(image: UIImage(systemName:"gearshape.fill"), style: .plain, target: self, action: #selector(showMoreOption))
+        settingsBtn.tintColor = .black
+        navigationItem.rightBarButtonItems = [settingsBtn]
+        
         
         self.createCityMenu(){
             item in
             
             self.cityButton.setTitle(item, for: .normal)
                         
+            self.presenter.performGetListPresenter(region:item,kinds: self.selectedCategories)
         }
-        
         
         self.presenter.performGetListPresenter()
     
-        tagListView.addTags(["Add", "two", "tags tags "])
+    }
+    
+    @objc func showMoreOption(){
         
-
+        
+        performSegue(withIdentifier: "moveToSettings", sender: nil)
+        
     }
     
     func createCityMenu(didSelect: @escaping (_ city:String) -> Void = {city in } )
@@ -172,6 +250,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         let menu = UIMenu(title:"Select a city",children: childrens)
+        cityButton.tintColor = .gray
         cityButton.setTitle("Select a city", for: .normal)
         cityButton.showsMenuAsPrimaryAction = true
         cityButton.menu = menu
@@ -179,8 +258,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.view.addSubview(cityButton)
         
         cityButton.translatesAutoresizingMaskIntoConstraints = false
-        view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: cityButton.trailingAnchor, constant: 16).isActive = true
-        cityButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 16).isActive = true
+        
+        cityButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        
+
+        tagListView.topAnchor.constraint(equalTo: cityButton.bottomAnchor, constant: 16).isActive = true
         
     }
    

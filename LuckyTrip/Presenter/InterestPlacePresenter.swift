@@ -30,20 +30,46 @@ class PlaceOfInterestPresenter
         self.placeOfInterestService = placeOfInterestService
     }
     
-    func performGetListPresenter()
+    func performGetListPresenter(region:String = "",radius:Int = 3000, lon:Double = 10.63699, lat :Double = 35.82539,kinds:[String] = [])
     {
 
         self.placeOfInterestViewNotifier.showLoadingView()
+        let radius = PreferencesUtils.getRadiusValue()
         
         Task
         {
             
-            let result = try? await self.placeOfInterestService.getListPlacesOfInterest(url: "https://api.opentripmap.com/0.1/en/places/radius?apikey=5ae2e3f221c38a28845f05b6e1e72f6e6fae9bc6a9473af209e333f9&radius=30000&lon=10.63699&lat=35.82539&rate=3&format=json", httpMethod: "GET")
+            var url = ""
 
+            if region == ""
+            {
+                
+                url = Const.GET_PLACES + "/radius?apikey=" + Const.API_KEY + "&radius=\(radius)&lon=\(lon)&lat=\(lat)&rate=3&format=json"
+            
+            }else {
+
+                let urlRegion = Const.GET_REGION + "?apikey=" + Const.API_KEY + "&name=" + region
+                
+                let regionResult = try? await self.placeOfInterestService.getRegionByName(url: urlRegion, httpMethod: "GET")
+
+                if let regionResult = (regionResult as? Region) {
+                    
+                    url = Const.GET_PLACES + "/radius?apikey=" + Const.API_KEY + "&radius=\(radius)&lon=\(regionResult.lon ?? 0)&lat=\(regionResult.lat ?? 0)&rate=3&format=json"
+                    
+                }else{
+                    
+                }
+                
+            }
+            
+            
+             url = kinds.isEmpty ? url : url + "&kinds=" + kinds.joined(separator: ",")
+            print(url)
+            let result = try? await self.placeOfInterestService.getListPlacesOfInterest(url: url, httpMethod: "GET")
+        
             if let list = (result as? [InterestPlace])
             {
 
-                
                 /*let mylist:[InterestPlace] = list.map{
                     
                     $0.dist = Double(String(format: "%.2f",$0.dist ?? 0))
@@ -66,6 +92,13 @@ class PlaceOfInterestPresenter
 
                 }
                 
+            }else {
+                
+                DispatchQueue.main.async {
+                 
+                    self.placeOfInterestViewNotifier.hideLoadingView()
+
+                }
             }
             
         }
@@ -73,6 +106,5 @@ class PlaceOfInterestPresenter
         
     }
        
-   
 }
 

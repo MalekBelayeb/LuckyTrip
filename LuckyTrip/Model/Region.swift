@@ -7,9 +7,15 @@
 
 import Foundation
 
-class Region
+class Region:Decodable
 {
-    
+        
+    var name: String?
+    var country : String?
+    var lat : Double?
+    var lon: Double?
+    var population : Int?
+    var timezone : String?
+    var status : String?
 
-    
 }

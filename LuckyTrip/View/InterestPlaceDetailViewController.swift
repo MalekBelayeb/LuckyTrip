@@ -48,15 +48,21 @@ class InterestPlaceDetailViewController: UIViewController,PlaceOfInterestDetailV
 
     var presenter:InterestPlaceOfInterestDetailPresenter = InterestPlaceOfInterestDetailPresenter(placeOfInterestService: PlaceOfinterestService())
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        self.tabBarController?.tabBar.isHidden = true
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = self.placeOfInterest?.name ?? ""
-        //self.webView.navigationDelegate = self
+        self.navigationItem.largeTitleDisplayMode = .never
         
         self.presenter.placeOfInterestDetailViewNotifier = self
-        
         self.presenter.performGetPOIById(id: self.placeOfInterest?.xid)
+        
         
     }
     
@@ -85,5 +91,7 @@ class InterestPlaceDetailViewController: UIViewController,PlaceOfInterestDetailV
     
     }
     
+    
+
 
 }
