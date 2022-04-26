@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 protocol PlaceOfInterestDetailViewNotifier
 {
     

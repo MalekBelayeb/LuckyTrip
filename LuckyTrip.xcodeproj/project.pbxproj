@@ -13,6 +13,7 @@
 		075497B52814BD9E00E0D13A /* InterestPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075497B42814BD9E00E0D13A /* InterestPlaceDetail.swift */; };
 		075497B72814D18700E0D13A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075497B62814D18700E0D13A /* Extensions.swift */; };
 		0785532028140AFE0044CCE2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785531F28140AFE0044CCE2 /* Const.swift */; };
+		07A2786328188D680033D1F2 /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A2786228188D680033D1F2 /* MapViewViewController.swift */; };
 		07BF92DE2817334B000A1A34 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BF92DD2817334B000A1A34 /* SettingsViewController.swift */; };
 		07BF92E028173749000A1A34 /* PreferencesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BF92DF28173749000A1A34 /* PreferencesUtils.swift */; };
 		07D72EEF28157E4E00655381 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D72EEE28157E4E00655381 /* Region.swift */; };
@@ -42,6 +43,7 @@
 		075497B42814BD9E00E0D13A /* InterestPlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPlaceDetail.swift; sourceTree = "<group>"; };
 		075497B62814D18700E0D13A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0785531F28140AFE0044CCE2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		07A2786228188D680033D1F2 /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
 		07BF92DD2817334B000A1A34 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		07BF92DF28173749000A1A34 /* PreferencesUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesUtils.swift; sourceTree = "<group>"; };
 		07D72EEE28157E4E00655381 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				4A03300C2810CA1500AEE9BD /* InterestPlaceDetailViewController.swift */,
 				07D72EF02816042E00655381 /* WikipediaWKViewController.swift */,
 				07BF92DD2817334B000A1A34 /* SettingsViewController.swift */,
+				07A2786228188D680033D1F2 /* MapViewViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				07D72EF12816042E00655381 /* WikipediaWKViewController.swift in Sources */,
 				4A4DB2362811F28B0002FFAE /* InterestPlacePresenter.swift in Sources */,
 				07D72EEF28157E4E00655381 /* Region.swift in Sources */,
+				07A2786328188D680033D1F2 /* MapViewViewController.swift in Sources */,
 				07BF92DE2817334B000A1A34 /* SettingsViewController.swift in Sources */,
 				07343A7D28148B4C00ECEA67 /* LoadingView.swift in Sources */,
 				07D72EF42816094900655381 /* POICollectionViewCell.swift in Sources */,

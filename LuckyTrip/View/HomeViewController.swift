@@ -211,7 +211,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         settingsBtn.tintColor = .black
         navigationItem.rightBarButtonItems = [settingsBtn]
         
-        
         self.createCityMenu(){
             item in
             

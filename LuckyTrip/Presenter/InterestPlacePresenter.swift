@@ -63,8 +63,8 @@ class PlaceOfInterestPresenter
             }
             
             
-             url = kinds.isEmpty ? url : url + "&kinds=" + kinds.joined(separator: ",")
-            print(url)
+            url = kinds.isEmpty ? url : url + "&kinds=" + kinds.joined(separator: ",")
+            
             let result = try? await self.placeOfInterestService.getListPlacesOfInterest(url: url, httpMethod: "GET")
         
             if let list = (result as? [InterestPlace])

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cG8-IW-OGS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HvG-Ym-7j6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -172,6 +172,7 @@
         <scene sceneID="B6M-XU-4a1">
             <objects>
                 <tabBarController id="cG8-IW-OGS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="42I-L2-jye"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gxe-t4-heE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -184,7 +185,36 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqK-WP-BdS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="-910"/>
+            <point key="canvasLocation" x="-141" y="-976"/>
+        </scene>
+        <!--Map View View Controller-->
+        <scene sceneID="vSg-qg-qEW">
+            <objects>
+                <viewController id="HvG-Ym-7j6" customClass="MapViewViewController" customModule="LuckyTrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qn2-QD-tuG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krY-BT-Fdd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ROf-40-sV6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="krY-BT-Fdd" firstAttribute="leading" secondItem="ROf-40-sV6" secondAttribute="leading" id="25v-bF-6hb"/>
+                            <constraint firstItem="krY-BT-Fdd" firstAttribute="trailing" secondItem="ROf-40-sV6" secondAttribute="trailing" id="BQ0-vi-Cwo"/>
+                            <constraint firstItem="krY-BT-Fdd" firstAttribute="top" secondItem="qn2-QD-tuG" secondAttribute="top" id="h4N-85-Yuk"/>
+                            <constraint firstItem="krY-BT-Fdd" firstAttribute="bottom" secondItem="ROf-40-sV6" secondAttribute="bottom" id="imm-si-vUU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="krY-BT-Fdd" id="TqG-1y-VoM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9F9-Qa-pAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="546"/>
         </scene>
         <!--Item-->
         <scene sceneID="51e-Wm-D0b">

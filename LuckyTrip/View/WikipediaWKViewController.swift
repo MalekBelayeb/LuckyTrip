@@ -9,8 +9,7 @@ import UIKit
 import WebKit
 
 class WikipediaWKViewController: UIViewController {
-    
-    
+        
     @IBOutlet weak var webKitView: WKWebView!
     
     var urlWiki:String?
