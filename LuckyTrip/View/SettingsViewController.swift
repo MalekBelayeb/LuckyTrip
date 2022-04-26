@@ -36,7 +36,6 @@ class SettingsViewController: UIViewController {
         
         PreferencesUtils.setRadiusValue(radius: self.sliderValue)
         
-        
     }
     
     

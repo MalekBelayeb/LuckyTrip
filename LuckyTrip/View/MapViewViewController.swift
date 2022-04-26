@@ -29,29 +29,29 @@ class MapViewViewController: UIViewController,MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //42.997581, 12.784165
-        //42.451381, 13.059208
-        let initialLocation = CLLocation(latitude: 42.997581, longitude: 12.784165)
-        
-        self.mapView.centerCoordinate = initialLocation.coordinate
        
-        
+        let initialLocation = CLLocation(latitude: 42.997581, longitude: 12.784165)
+        let destLocation = CLLocation(latitude: 42.451381, longitude: 13.059208)
+
+        self.mapView.centerCoordinate = initialLocation.coordinate
         self.mapView.delegate = self
         self.mapView.isScrollEnabled = true
         self.mapView.isZoomEnabled = true
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = initialLocation.coordinate
-        
         annotation.title = "sddsdsds "
-        
         annotation.subtitle = "subtitle qsdqdd qsqs qd qsd qsd qsd sqd dq sdd qs qdq"
         
+        let annotation2 = MKPointAnnotation()
+        annotation2.coordinate = destLocation.coordinate
+        annotation2.title = "sddsdsds "
+        annotation2.subtitle = "subtitle qsdqdd qsqs qd qsd qsd qsd sqd dq sdd qs qdq"
+        
         self.mapView.addAnnotation(annotation)
+        self.mapView.addAnnotation(annotation2)
         
-        
-        
-        destinationTo(coord:  CLLocation(latitude: 42.451381, longitude:  13.059208).coordinate , source: initialLocation.coordinate)
+        destinationTo(coord: destLocation.coordinate , source: initialLocation.coordinate)
     
     }
     
